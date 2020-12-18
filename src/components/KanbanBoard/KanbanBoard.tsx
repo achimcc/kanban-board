@@ -1,5 +1,5 @@
 import * as React from "react";
-import TaskList from "../TaskList/TaskList";
+import TaskList from "../taskList/TaskList";
 import { TaskStatus } from "../../common";
 import { Container, Grid } from "@material-ui/core";
 
