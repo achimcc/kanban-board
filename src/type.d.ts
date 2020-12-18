@@ -8,8 +8,16 @@ interface IRootState {
   tasks: TasksState
 }
 
+interface ITaskStatus {
+  TaskStatus: string
+}
+
 type TasksState = {
-  tasks: ITask[]
+  tasks: {
+    byIds: Object<any>,
+    allIds: Array<number>
+  },
+  status: Object<any>
 }
   
 type TaskAction = {

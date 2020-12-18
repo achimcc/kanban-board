@@ -23,8 +23,12 @@ interface Props {
 const TaskList = ({ type, title }: Props) => {
   const classes = useStyles();
   const tasks = useSelector((store: IRootState) =>
-    store.tasks.tasks.filter((task: ITask) => task.status === type)
+    store.tasks.status[type].map((id: number) => ({
+      id,
+      ...store.tasks.tasks.byIds[id],
+    }))
   );
+  console.log("tasks: ", tasks);
   return (
     <Paper>
       <div className={classes.root}>

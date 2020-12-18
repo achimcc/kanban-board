@@ -1,58 +1,51 @@
 import {TaskStatus, TaskActions} from "../../common"
 
 const initialState: TasksState = {
-  tasks: [
-    {
-      id: 1,
-      title: "item 1",
-      status: TaskStatus.ToDo
+  tasks: {
+    byIds: {
+      1:{
+        title: "item 1",
+      },
+      2: {
+        title: "item 2",
+       },
+      3: {
+        title: "item 3",
+      }
     },
-    {
-      id: 2,
-      title: "item 2",
-      status: TaskStatus.Doing
-    },
-    {
-      id: 3,
-      title: "item 3",
-      status: TaskStatus.Done
-    }
-  ],
+    allIds: [1,2,3]
+  },
+  status: {
+    [TaskStatus.ToDo]: [1],
+    [TaskStatus.Doing]: [2],
+    [TaskStatus.Done]: [3],
+  }
 }
 
 const itemListReducer = (
     state: TasksState = initialState,
     action: TaskAction
   ): TasksState => {
-    console.log('reducer!', state, action)
     switch (action.type) {
-      case TaskActions.Create:
-        const newItem: ITask = {
-          id: Math.random(), 
-          title: action.payload.taskTitle,
-          status: TaskStatus.ToDo
-        }
+      case TaskActions.Create: {
+        const newId = Math.random();
+        const newTasks = {[newId]: {title: action.payload.taskTitle}, ...state.tasks}
+        const newStatus = state.status[TaskStatus.ToDo].concat(newId)
         return {
           ...state,
-          tasks: state.tasks.concat(newItem),
+          tasks: newTasks,
         }
+      }
       case TaskActions.SetStatus:
         console.log('updating task: ', action.payload)
         const {taskId, status} = action.payload
-        const updatedTasks: ITask[] = state.tasks.map(
-          task => task.id === taskId ? {...task, status} : task
-        )
+        
         return {
           ...state,
-          tasks: updatedTasks
         }
         case TaskActions.Delete:
-        const newTasks: ITask[] = state.tasks.filter(
-          item => item.id !== action.payload.taskId
-        )
         return {
-          ...state,
-          tasks: newTasks
+          ...state
         }
     }
     return state
