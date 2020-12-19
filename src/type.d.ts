@@ -12,12 +12,16 @@ interface ITaskStatus {
   TaskStatus: string
 }
 
+interface IStatus {
+  TaskStatus:Array<number>
+}
+
 type TasksState = {
   tasks: {
     byIds: Object<any>,
     allIds: Array<number>
   },
-  status: Object<any>
+  status: IStatus
 }
   
 type TaskAction = {

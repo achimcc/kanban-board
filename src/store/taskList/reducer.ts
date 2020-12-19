@@ -21,7 +21,11 @@ const initialState: TasksState = {
     [TaskStatus.Done]: [3],
   }
 }
-
+interface IStatus {
+  [TaskStatus.ToDo]: Array<number>
+  [TaskStatus.Doing]: Array<number>
+  [TaskStatus.Done]: Array<number>
+}
 const itemListReducer = (
     state: TasksState = initialState,
     action: TaskAction
@@ -38,10 +42,18 @@ const itemListReducer = (
       }
       case TaskActions.SetStatus:
         console.log('updating task: ', action.payload)
-        const {taskId, status} = action.payload
-        
+        const test:IStatus={
+          [TaskStatus.ToDo]: [1],
+          [TaskStatus.Doing]: [2],
+          [TaskStatus.Done]: [3],
+        }
+        Object.values(TaskStatus).reduce<IStatus>((acc:IStatus, value:TaskStatus)=>{
+          acc[value]=[1]
+          return acc
+        }, test)
         return {
           ...state,
+          status: test
         }
         case TaskActions.Delete:
         return {
