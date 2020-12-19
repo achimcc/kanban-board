@@ -1,7 +1,7 @@
-import {TaskStatus, TaskActions} from "../../common"
+import {TaskStatus, TaskActions} from "../common"
 
-const initialState: TasksState = {
-  tasks: [
+const initialState: IRootState = {
+    tasks: [
     {
       id: 1,
       title: "item 1",
@@ -21,9 +21,9 @@ const initialState: TasksState = {
 }
 
 const itemListReducer = (
-    state: TasksState = initialState,
+    state: IRootState = initialState,
     action: TaskAction
-  ): TasksState => {
+  ): IRootState => {
     console.log('reducer!', state, action)
     switch (action.type) {
       case TaskActions.Create:

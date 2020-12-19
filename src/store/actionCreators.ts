@@ -1,4 +1,4 @@
-import {TaskActions, TaskStatus} from "../../common"
+import {TaskActions, TaskStatus} from "../common"
 
 export function addTask(taskTitle: string):TaskAction {
   const action = {

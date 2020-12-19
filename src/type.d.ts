@@ -5,7 +5,7 @@ interface ITask {
 }
   
 interface IRootState {
-  tasks: TasksState
+  tasks: ITask[]
 }
 
 type TasksState = {

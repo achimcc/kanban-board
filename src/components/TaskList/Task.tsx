@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useDispatch } from "react-redux";
 
-import { updateTask, removeTask } from "../../store/taskList/actionCreators";
+import { updateTask, removeTask } from "../../store/actionCreators";
 import { TaskStatus } from "../../common";
 
 import {
@@ -45,7 +45,7 @@ const Task = ({ task }: Props) => {
       </ListItemIcon>
       <ListItemText primary={task.title} />
       <ListItemIcon>
-        {task.status == TaskStatus.Done ? (
+        {task.status === TaskStatus.Done ? (
           <Button onClick={() => dispatch(removeTask(task.id))}>
             <CloseIcon />
           </Button>

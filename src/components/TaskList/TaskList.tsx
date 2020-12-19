@@ -23,7 +23,7 @@ interface Props {
 const TaskList = ({ type, title }: Props) => {
   const classes = useStyles();
   const tasks = useSelector((store: IRootState) =>
-    store.tasks.tasks.filter((task: ITask) => task.status === type)
+    store.tasks.filter((task: ITask) => task.status === type)
   );
   return (
     <Paper>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { TextField, Button, Grid, Box } from "@material-ui/core";
-import { addTask } from "../../store/taskList/actionCreators";
+import { addTask } from "../../store/actionCreators";
 
 export default function SubmitTask() {
   const dispatch = useDispatch();
