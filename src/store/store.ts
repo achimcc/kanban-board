@@ -1,9 +1,11 @@
 import { combineReducers, createStore } from 'redux';
-import itemListReducer from './taskList/reducer';
+import taskReducer from './tasks/reducer';
+import uiReducer from './ui/reducer';
 
 const store = createStore<IRootState, any, any, any>(
     combineReducers({
-        tasks: itemListReducer
+        data: taskReducer,
+        ui: uiReducer
 }));
 
 export default store;

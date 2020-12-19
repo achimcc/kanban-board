@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import Task from "./Task";
 import { TaskStatus } from "../../common";
 import Typography from "@material-ui/core/Typography";
+import { taskSelector } from "../../store/selectors";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,19 +17,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-  type: TaskStatus;
+  status: TaskStatus;
   title: string;
 }
 
-const TaskList = ({ type, title }: Props) => {
+const TaskList = ({ status, title }: Props) => {
   const classes = useStyles();
-  const tasks = useSelector((store: IRootState) =>
-    store.tasks.status[type].map((id: number) => ({
-      id,
-      ...store.tasks.tasks.byIds[id],
-    }))
-  );
-  console.log("tasks: ", tasks);
+  const tasks = useSelector((store: IRootState) => taskSelector(store, status));
   return (
     <Paper>
       <div className={classes.root}>

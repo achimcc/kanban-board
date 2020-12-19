@@ -5,15 +5,12 @@ interface ITask {
 }
   
 interface IRootState {
-  tasks: TasksState
+  data: TasksState
+  ui: UISTate
 }
 
 interface ITaskStatus {
   TaskStatus: string
-}
-
-interface IStatus {
-  TaskStatus:Array<number>
 }
 
 type TasksState = {
@@ -21,7 +18,10 @@ type TasksState = {
     byIds: Object<any>,
     allIds: Array<number>
   },
-  status: IStatus
+}
+
+type UIState = {
+  status: Object<any>
 }
   
 type TaskAction = {

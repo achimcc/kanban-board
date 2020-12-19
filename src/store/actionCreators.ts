@@ -1,15 +1,15 @@
-import {TaskActions, TaskStatus} from "../../common"
+import {TaskActions, TaskStatus} from "../common"
 
 export function addTask(taskTitle: string):TaskAction {
+  const id = Math.random();
   const action = {
     type: TaskActions.Create,
-    payload: {taskTitle}
+    payload: {taskTitle, id}
   }
   return action
 }
 
 export function updateTask(taskId: Number, status: TaskStatus):TaskAction {
-  console.log('updateTaskCreator ')
   const action: TaskAction = {
     type: TaskActions.SetStatus,
     payload: {status, taskId}
