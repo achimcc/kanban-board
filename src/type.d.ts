@@ -1,32 +1,32 @@
 interface ITask {
-  id: number
-  title: string
-  status: TaskStatus
+  id: number;
+  title: string;
+  status: TaskStatus;
 }
-  
+
 interface IRootState {
-  data: TasksState
-  ui: UISTate
+  data: TasksState;
+  ui: UISTate;
 }
 
 interface ITaskStatus {
-  TaskStatus: string
+  TaskStatus: string;
 }
 
 type TasksState = {
   tasks: {
-    byIds: Object<any>,
-    allIds: Array<number>
-  },
-}
+    byIds: Object<any>;
+    allIds: Array<number>;
+  };
+};
 
 type UIState = {
-  status: Object<any>
-}
-  
-type TaskAction = {
-  type: TaskActions,
-  payload: any
-}
+  taskStatus: Object<any>;
+};
 
-type DispatchType = (args: TaskAction) => TaskAction
+type TaskAction = {
+  type: TaskActions;
+  payload: any;
+};
+
+type DispatchType = (args: TaskAction) => TaskAction;
