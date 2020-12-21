@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import store from "./store/store";
+import { store } from "./store/index";
 import KanbanBoard from "./components/kanbanBoard/KanbanBoard";
 import SubmitTask from "./components/submitTask/SubmitTask";
 import { Box, Typography } from "@material-ui/core";

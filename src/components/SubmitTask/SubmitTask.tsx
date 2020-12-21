@@ -1,7 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch } from "../../store/index";
 import { TextField, Button, Grid, Box } from "@material-ui/core";
-import { addTask } from "../../store/actionCreators";
 
 export default function SubmitTask() {
   const dispatch = useDispatch();
@@ -10,7 +9,12 @@ export default function SubmitTask() {
     setTaskName(event.currentTarget.value);
   };
   const handleClick = () => {
-    const action = addTask(taskName);
+    const type: Actions = "CREATE";
+    const action = {
+      type,
+      title: taskName,
+      id: Math.random(),
+    };
     dispatch(action);
     setTaskName("");
   };

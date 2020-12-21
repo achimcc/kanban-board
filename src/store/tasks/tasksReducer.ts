@@ -1,4 +1,3 @@
-import { TaskActions } from "../../common";
 import { produce } from "immer";
 
 const initialState: TasksState = {
@@ -24,16 +23,18 @@ const tasksReducer = (
 ): TasksState =>
   produce(state, (draft: TasksState) => {
     switch (action.type) {
-      case TaskActions.Create: {
-        const { taskTitle, id } = action.payload;
-        draft.tasks.byIds[id] = { id, title: taskTitle };
+      case "CREATE": {
+        const { title, id } = action;
+        draft.tasks.byIds[id] = { id, title };
         draft.tasks.allIds.push(id);
         break;
       }
-      case TaskActions.Delete:
-        const { taskId } = action.payload;
-        delete draft.tasks.byIds[taskId];
-        draft.tasks.allIds = draft.tasks.allIds.filter((id) => id !== taskId);
+      case "DELETE":
+        const { id: idToDelete } = action;
+        delete draft.tasks.byIds[idToDelete];
+        draft.tasks.allIds = draft.tasks.allIds.filter(
+          (id) => id !== idToDelete
+        );
         break;
     }
   });

@@ -1,7 +1,5 @@
 import * as React from "react";
-import { useDispatch } from "react-redux";
-
-import { updateTask, removeTask } from "../../store/actionCreators";
+import { useDispatch } from "../../store/index";
 import { TaskStatus } from "../../common";
 
 import {
@@ -24,12 +22,18 @@ enum Direction {
 }
 
 const moveTask = (task: ITask, direction: Direction) => {
-  const statusArr = Object.values(TaskStatus);
+  const statusArr: Array<TaskStatus> = Object.values(TaskStatus);
   const statusIndex =
     statusArr.indexOf(task.status) + (direction === Direction.Left ? -1 : 1);
   const status =
     statusIndex > -1 && statusIndex < 3 ? statusArr[statusIndex] : task.status;
-  return updateTask(task.id, status);
+  const type: Actions = "SET_STATUS";
+  const action = {
+    type,
+    id: task.id,
+    status,
+  };
+  return action;
 };
 
 const Task = ({ task }: Props) => {
@@ -46,7 +50,7 @@ const Task = ({ task }: Props) => {
       <ListItemText primary={task.title} />
       <ListItemIcon>
         {task.status === TaskStatus.Done ? (
-          <Button onClick={() => dispatch(removeTask(task.id))}>
+          <Button onClick={() => dispatch({ type: "DELETE", id: task.id })}>
             <CloseIcon />
           </Button>
         ) : (
