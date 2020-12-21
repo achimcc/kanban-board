@@ -1,8 +1,3 @@
-interface IRootState {
-  data: TasksState;
-  ui: UISTate;
-}
-
 interface ITask {
   id: number;
   title: string;
@@ -38,7 +33,12 @@ type TasksState = {
 };
 
 type UIState = {
-  taskStatus: Object<any>;
+  taskStatus: Object<Array<number>>;
 };
+
+interface IRootState {
+  data: TasksState;
+  ui: UISTate;
+}
 
 type DispatchType = (args: TaskAction) => TaskAction;

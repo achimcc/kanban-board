@@ -2,7 +2,7 @@ import * as React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import Paper from "@material-ui/core/Paper";
-import { useSelector } from "react-redux";
+import { useSelector } from "../../store/index";
 import Task from "./Task";
 import { TaskStatus } from "../../common";
 import Typography from "@material-ui/core/Typography";
