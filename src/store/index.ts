@@ -10,12 +10,12 @@ const store = createStore<IRootState, any, any, any>(
   })
 );
 
-const _useSelector = createSelectorHook<IRootState>();
-
 function useDispatch(): DispatchType {
   const dispatch = _useDispatch();
   return (action: TaskAction) => dispatch(action);
 }
+
+const _useSelector = createSelectorHook<IRootState>();
 
 function useSelector<T>(fn: (store: IRootState) => T): T {
   return fn(_useSelector((x) => x));
