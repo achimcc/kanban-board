@@ -1,6 +1,5 @@
 import * as React from "react";
-import { useDispatch } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
 import { updateTask, removeTask } from "../../store/actionCreators";
 import { TaskStatus } from "../../common";
 
@@ -15,7 +14,8 @@ import SkipNextIcon from "@material-ui/icons/SkipNext";
 import CloseIcon from "@material-ui/icons/Close";
 
 interface Props {
-  task: ITask;
+  taskId: number;
+  status: TaskStatus;
 }
 
 enum Direction {
@@ -23,34 +23,41 @@ enum Direction {
   Right,
 }
 
-const moveTask = (task: ITask, direction: Direction) => {
+const moveTask = (taskId: number, status: TaskStatus, direction: Direction) => {
   const statusArr = Object.values(TaskStatus);
   const statusIndex =
-    statusArr.indexOf(task.status) + (direction === Direction.Left ? -1 : 1);
-  const status =
-    statusIndex > -1 && statusIndex < 3 ? statusArr[statusIndex] : task.status;
-  return updateTask(task.id, status);
+    statusArr.indexOf(status) + (direction === Direction.Left ? -1 : 1);
+  const newStatus =
+    statusIndex > -1 && statusIndex < 3 ? statusArr[statusIndex] : status;
+  return updateTask(taskId, newStatus);
 };
 
-const Task = ({ task }: Props) => {
+const Task = ({ taskId, status }: Props) => {
+  const task = useSelector<IRootState>(
+    (store: IRootState): TaskData => store.data.tasks.byIds[taskId]
+  );
   const dispatch = useDispatch();
   return (
     <ListItem>
       <ListItemIcon>
-        {task.status !== TaskStatus.ToDo && (
-          <Button onClick={() => dispatch(moveTask(task, Direction.Left))}>
+        {status !== TaskStatus.ToDo && (
+          <Button
+            onClick={() => dispatch(moveTask(taskId, status, Direction.Left))}
+          >
             <SkipPrevious />
           </Button>
         )}
       </ListItemIcon>
       <ListItemText primary={task.title} />
       <ListItemIcon>
-        {task.status === TaskStatus.Done ? (
-          <Button onClick={() => dispatch(removeTask(task.id))}>
+        {status === TaskStatus.Done ? (
+          <Button onClick={() => dispatch(removeTask(taskId))}>
             <CloseIcon />
           </Button>
         ) : (
-          <Button onClick={() => dispatch(moveTask(task, Direction.Right))}>
+          <Button
+            onClick={() => dispatch(moveTask(taskId, status, Direction.Right))}
+          >
             <SkipNextIcon />
           </Button>
         )}

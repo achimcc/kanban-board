@@ -23,7 +23,7 @@ interface Props {
 
 const TaskList = ({ status, title }: Props) => {
   const classes = useStyles();
-  const tasks = useSelector((store: IRootState) => taskSelector(store, status));
+  const tasks = useSelector<IRootState>((store) => store.ui.status[status]);
   return (
     <Paper>
       <div className={classes.root}>
