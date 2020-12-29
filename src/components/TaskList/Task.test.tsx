@@ -1,9 +1,27 @@
-import React from "react";
+import { shallow } from "enzyme";
+import { TaskStatus } from "../../common";
+import configureMockStore from "redux-mock-store";
 import Item from "./Task";
-import * as Enzyme from "enzyme";
+import { Provider } from "react-redux";
 
-describe("SubmitItem", () => {
+describe("Task", () => {
   it("is truthy", () => {
     expect(Item).toBeTruthy();
   });
+  const mockStore = configureMockStore();
+  const storeStateMock = {
+    ui: {},
+    tasks: {},
+  };
+  const store = mockStore(storeStateMock);
+  const task: ITask = {
+    id: 2,
+    title: "test item",
+    status: TaskStatus.ToDo,
+  };
+  const wrapper = shallow(
+    <Provider store={store}>
+      <Item task={task} />
+    </Provider>
+  );
 });

@@ -1,9 +1,7 @@
-import React from 'react'
-import ItemList from './TaskList'
-import * as Enzyme from 'enzyme'
+import ItemList from "./TaskList";
 
-describe('ItemList', () => {
-  it('is truthy', () => {
-    expect(ItemList).toBeTruthy()
-  })
-})
+describe("ItemList", () => {
+  it("is truthy", () => {
+    expect(ItemList).toBeTruthy();
+  });
+});
