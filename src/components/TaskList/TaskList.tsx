@@ -23,7 +23,9 @@ interface Props {
 
 const TaskList = ({ status, title }: Props) => {
   const classes = useStyles();
-  const tasks = useSelector<IRootState>((store) => store.ui.status[status]);
+  const tasks = useSelector<IRootState, Array<number>>(
+    (store) => store.ui.status[status]
+  );
   return (
     <Paper>
       <div className={classes.root}>
@@ -31,8 +33,8 @@ const TaskList = ({ status, title }: Props) => {
           {title}
         </Typography>
         <List component="nav" aria-label="main mailbox folders">
-          {tasks.map((task: ITask) => (
-            <Task task={task} key={task.id} />
+          {tasks.map((taskId: number) => (
+            <Task taskId={taskId} key={taskId} status={status} />
           ))}
         </List>
       </div>

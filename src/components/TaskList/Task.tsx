@@ -33,9 +33,10 @@ const moveTask = (taskId: number, status: TaskStatus, direction: Direction) => {
 };
 
 const Task = ({ taskId, status }: Props) => {
-  const task = useSelector<IRootState>(
+  const task = useSelector<IRootState, TaskData>(
     (store: IRootState): TaskData => store.data.tasks.byIds[taskId]
   );
+
   const dispatch = useDispatch();
   return (
     <ListItem>
@@ -48,7 +49,7 @@ const Task = ({ taskId, status }: Props) => {
           </Button>
         )}
       </ListItemIcon>
-      <ListItemText primary={task.title} />
+      <ListItemText primary={task?.title} />
       <ListItemIcon>
         {status === TaskStatus.Done ? (
           <Button onClick={() => dispatch(removeTask(taskId))}>

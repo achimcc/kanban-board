@@ -4,6 +4,19 @@ interface ITask {
   status: TaskStatus;
 }
 
+type UIState = {
+  [TaskStatus.ToDo]: Array<number>;
+  [TaskStatus.Doing]: Array<number>;
+  [TaskStatus.Done]: Array<number>;
+};
+
+type TasksState = {
+  tasks: {
+    byIds: Object<Number<Object<TaskData>>>;
+    allIds: Array<number>;
+  };
+};
+
 interface IRootState {
   data: TasksState;
   ui: UISTate;
@@ -16,17 +29,6 @@ interface TaskData {
 interface ITaskStatus {
   TaskStatus: string;
 }
-
-type TasksState = {
-  tasks: {
-    byIds: Object<Number<Object<TaskData>>>;
-    allIds: Array<number>;
-  };
-};
-
-type UIState = {
-  status: Object<any>;
-};
 
 type TaskAction = {
   type: TaskActions;
