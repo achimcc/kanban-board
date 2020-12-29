@@ -8,9 +8,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
-import { SkipPrevious } from "@material-ui/icons";
-import SkipNextIcon from "@material-ui/icons/SkipNext";
-import CloseIcon from "@material-ui/icons/Close";
+import { SkipPrevious, SkipNext, Close } from "@material-ui/icons";
 
 interface Props {
   task: ITask;
@@ -51,11 +49,11 @@ const Task = ({ task }: Props) => {
       <ListItemIcon>
         {task.status === TaskStatus.Done ? (
           <Button onClick={() => dispatch({ type: "DELETE", id: task.id })}>
-            <CloseIcon />
+            <Close />
           </Button>
         ) : (
           <Button onClick={() => dispatch(moveTask(task, Direction.Right))}>
-            <SkipNextIcon />
+            <SkipNext />
           </Button>
         )}
       </ListItemIcon>
