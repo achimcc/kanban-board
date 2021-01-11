@@ -54,6 +54,21 @@ describe("Task", () => {
       status: TaskStatus.Doing,
     });
   });
+  it("can move right", () => {
+    const task: ITask = {
+      id: 1,
+      title: "test item",
+      status: TaskStatus.ToDo,
+    };
+    const component = componentFromTask(task);
+    component.find(SkipNext).simulate("click");
+    expect(store.dispatch).toHaveBeenCalledTimes(1);
+    expect(store.dispatch).toHaveBeenCalledWith({
+      type: "SET_STATUS",
+      id: 1,
+      status: TaskStatus.Doing,
+    });
+  });
   it("can be deleted", () => {
     const task: ITask = {
       id: 2,

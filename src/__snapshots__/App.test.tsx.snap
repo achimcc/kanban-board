@@ -1,0 +1,708 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="App"
+      >
+        <h4
+          class="MuiTypography-root MuiTypography-h4 MuiTypography-alignCenter"
+        >
+          Kanban Board App
+        </h4>
+        <div
+          class="MuiBox-root MuiBox-root-1"
+        >
+          <div
+            class="MuiBox-root MuiBox-root-2"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+              >
+                <div
+                  class="MuiFormControl-root MuiTextField-root"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+                    data-shrink="false"
+                    for="standard-name"
+                    id="standard-name-label"
+                  >
+                    Task Name
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiInput-input"
+                      id="standard-name"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-6"
+              >
+                <div
+                  class="MuiBox-root MuiBox-root-3"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                    id="btn-submit"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <span
+                      class="MuiButton-label"
+                    >
+                      Submit Task
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiContainer-root MuiContainer-maxWidthLg"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+            >
+              <div
+                class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+              >
+                <div
+                  class="makeStyles-root-4"
+                >
+                  <h6
+                    class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                  >
+                    TO_DO
+                  </h6>
+                  <nav
+                    aria-label="main mailbox folders"
+                    class="MuiList-root MuiList-padding"
+                  >
+                    <li
+                      class="MuiListItem-root MuiListItem-gutters"
+                    >
+                      <div
+                        class="MuiListItemIcon-root"
+                      />
+                      <div
+                        class="MuiListItemText-root"
+                      >
+                        <span
+                          class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                        >
+                          item 1
+                        </span>
+                      </div>
+                      <div
+                        class="MuiListItemIcon-root"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                    </li>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+            >
+              <div
+                class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+              >
+                <div
+                  class="makeStyles-root-4"
+                >
+                  <h6
+                    class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                  >
+                    DOING
+                  </h6>
+                  <nav
+                    aria-label="main mailbox folders"
+                    class="MuiList-root MuiList-padding"
+                  >
+                    <li
+                      class="MuiListItem-root MuiListItem-gutters"
+                    >
+                      <div
+                        class="MuiListItemIcon-root"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M6 6h2v12H6zm3.5 6l8.5 6V6z"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                      <div
+                        class="MuiListItemText-root"
+                      >
+                        <span
+                          class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                        >
+                          item 2
+                        </span>
+                      </div>
+                      <div
+                        class="MuiListItemIcon-root"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                    </li>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+            >
+              <div
+                class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+              >
+                <div
+                  class="makeStyles-root-4"
+                >
+                  <h6
+                    class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                  >
+                    DONE
+                  </h6>
+                  <nav
+                    aria-label="main mailbox folders"
+                    class="MuiList-root MuiList-padding"
+                  >
+                    <li
+                      class="MuiListItem-root MuiListItem-gutters"
+                    >
+                      <div
+                        class="MuiListItemIcon-root"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M6 6h2v12H6zm3.5 6l8.5 6V6z"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                      <div
+                        class="MuiListItemText-root"
+                      >
+                        <span
+                          class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                        >
+                          item 3
+                        </span>
+                      </div>
+                      <div
+                        class="MuiListItemIcon-root"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                    </li>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="App"
+    >
+      <h4
+        class="MuiTypography-root MuiTypography-h4 MuiTypography-alignCenter"
+      >
+        Kanban Board App
+      </h4>
+      <div
+        class="MuiBox-root MuiBox-root-1"
+      >
+        <div
+          class="MuiBox-root MuiBox-root-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root"
+              >
+                <label
+                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+                  data-shrink="false"
+                  for="standard-name"
+                  id="standard-name-label"
+                >
+                  Task Name
+                </label>
+                <div
+                  class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiInput-input"
+                    id="standard-name"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-6"
+            >
+              <div
+                class="MuiBox-root MuiBox-root-3"
+              >
+                <button
+                  class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                  id="btn-submit"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiButton-label"
+                  >
+                    Submit Task
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthLg"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+          >
+            <div
+              class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+            >
+              <div
+                class="makeStyles-root-4"
+              >
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                >
+                  TO_DO
+                </h6>
+                <nav
+                  aria-label="main mailbox folders"
+                  class="MuiList-root MuiList-padding"
+                >
+                  <li
+                    class="MuiListItem-root MuiListItem-gutters"
+                  >
+                    <div
+                      class="MuiListItemIcon-root"
+                    />
+                    <div
+                      class="MuiListItemText-root"
+                    >
+                      <span
+                        class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                      >
+                        item 1
+                      </span>
+                    </div>
+                    <div
+                      class="MuiListItemIcon-root"
+                    >
+                      <button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <span
+                          class="MuiButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                  </li>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+          >
+            <div
+              class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+            >
+              <div
+                class="makeStyles-root-4"
+              >
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                >
+                  DOING
+                </h6>
+                <nav
+                  aria-label="main mailbox folders"
+                  class="MuiList-root MuiList-padding"
+                >
+                  <li
+                    class="MuiListItem-root MuiListItem-gutters"
+                  >
+                    <div
+                      class="MuiListItemIcon-root"
+                    >
+                      <button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <span
+                          class="MuiButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6 6h2v12H6zm3.5 6l8.5 6V6z"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                    <div
+                      class="MuiListItemText-root"
+                    >
+                      <span
+                        class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                      >
+                        item 2
+                      </span>
+                    </div>
+                    <div
+                      class="MuiListItemIcon-root"
+                    >
+                      <button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <span
+                          class="MuiButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                  </li>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+          >
+            <div
+              class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+            >
+              <div
+                class="makeStyles-root-4"
+              >
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                >
+                  DONE
+                </h6>
+                <nav
+                  aria-label="main mailbox folders"
+                  class="MuiList-root MuiList-padding"
+                >
+                  <li
+                    class="MuiListItem-root MuiListItem-gutters"
+                  >
+                    <div
+                      class="MuiListItemIcon-root"
+                    >
+                      <button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <span
+                          class="MuiButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6 6h2v12H6zm3.5 6l8.5 6V6z"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                    <div
+                      class="MuiListItemText-root"
+                    >
+                      <span
+                        class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                      >
+                        item 3
+                      </span>
+                    </div>
+                    <div
+                      class="MuiListItemIcon-root"
+                    >
+                      <button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <span
+                          class="MuiButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                  </li>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

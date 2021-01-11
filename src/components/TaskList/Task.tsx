@@ -23,8 +23,7 @@ const moveTask = (task: ITask, direction: Direction) => {
   const statusArr: Array<TaskStatus> = Object.values(TaskStatus);
   const statusIndex =
     statusArr.indexOf(task.status) + (direction === Direction.Left ? -1 : 1);
-  const status =
-    statusIndex > -1 && statusIndex < 3 ? statusArr[statusIndex] : task.status;
+  const status = statusArr[statusIndex];
   const type: Actions = "SET_STATUS";
   const action = {
     type,

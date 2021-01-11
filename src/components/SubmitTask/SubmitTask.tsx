@@ -32,7 +32,12 @@ export default function SubmitTask() {
         </Grid>
         <Grid item container xs={6} alignItems="center" justify="center">
           <Box p={2}>
-            <Button variant="contained" color="primary" onClick={handleClick}>
+            <Button
+              variant="contained"
+              id={"btn-submit"}
+              color="primary"
+              onClick={handleClick}
+            >
               Submit Task
             </Button>
           </Box>
