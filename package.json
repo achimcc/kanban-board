@@ -2,7 +2,7 @@
   "name": "kanban-board",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://achimcc.github.io/",
+  "homepage": "https://achimcc.github.io/kanban-board/",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",

@@ -9,7 +9,7 @@ describe("tasksReducer", () => {
     expect(uiReducer(undefined, { type: "DELETE", id: 1 })).not.toMatchObject({
       taskStatus: { [TaskStatus.ToDo]: [1] },
     });
-    expect(uiReducer(undefined, { type: "DELETE", id: 1 })).toMatchObject({
+    expect(uiReducer(undefined, { type: "DELETE", id: "1" })).toMatchObject({
       taskStatus: {},
     });
     expect(
