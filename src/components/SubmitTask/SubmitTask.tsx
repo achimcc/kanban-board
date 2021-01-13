@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "../../store/index";
 import { TextField, Button, Grid, Box } from "@material-ui/core";
+import { nanoid } from "nanoid";
 
 export default function SubmitTask() {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ export default function SubmitTask() {
     const action = {
       type,
       title: taskName,
-      id: Math.random(),
+      id: nanoid(6),
     };
     dispatch(action);
     setTaskName("");

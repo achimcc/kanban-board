@@ -5,6 +5,7 @@ import { Container, Grid } from "@material-ui/core";
 
 const KanbanBoard = () => {
   const grid = (status: TaskStatus) => {
+    console.log(status);
     return (
       <Grid item xs={4} key={status}>
         <TaskList status={status} key={status} title={status} />
@@ -12,7 +13,7 @@ const KanbanBoard = () => {
     );
   };
   return (
-    <Container>
+    <Container id={"kanban"}>
       <Grid container spacing={1}>
         {Object.values(TaskStatus).map((status) => grid(status))}
       </Grid>

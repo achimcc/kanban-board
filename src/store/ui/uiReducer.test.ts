@@ -13,14 +13,14 @@ describe("tasksReducer", () => {
       taskStatus: {},
     });
     expect(
-      uiReducer(undefined, { type: "CREATE", id: 10, title: "Test Task" })
+      uiReducer(undefined, { type: "CREATE", id: "10", title: "Test Task" })
     ).toMatchObject({
       taskStatus: { [TaskStatus.ToDo]: [1, 10] },
     });
     expect(
       uiReducer(undefined, {
         type: "SET_STATUS",
-        id: 1,
+        id: "1",
         status: TaskStatus.Doing,
       })
     ).toMatchObject({

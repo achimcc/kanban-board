@@ -1,4 +1,3 @@
-import * as React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import Paper from "@material-ui/core/Paper";
@@ -6,13 +5,12 @@ import { useSelector } from "../../store/index";
 import Task from "./Task";
 import { TaskStatus } from "../../common";
 import Typography from "@material-ui/core/Typography";
-import { taskSelector } from "../../store/selectors";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
+    minHeight: "14vw",
   },
 }));
 
@@ -23,16 +21,19 @@ interface Props {
 
 const TaskList = ({ status, title }: Props) => {
   const classes = useStyles();
-  const tasks = useSelector((store: IRootState) => taskSelector(store, status));
+  const taskIds = useSelector(
+    (store: IRootState) => store.ui.taskStatus[status]
+  );
+  const updateId = useSelector((store: IRootState) => store.ui.updateId);
   return (
     <Paper>
-      <div className={classes.root}>
+      <div className={classes.root} id={`${status}`}>
         <Typography variant="h6" align="center">
           {title}
         </Typography>
         <List component="nav" aria-label="main mailbox folders">
-          {tasks.map((task: ITask) => (
-            <Task task={task} key={task.id} />
+          {taskIds.map((taskId: string) => (
+            <Task taskId={taskId} key={`${taskId}`} />
           ))}
         </List>
       </div>

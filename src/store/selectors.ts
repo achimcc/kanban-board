@@ -1,10 +1,16 @@
 import { TaskStatus } from "../common";
 
-const taskSelector = (store: IRootState, status: TaskStatus): Array<ITask> =>
-  store.ui.taskStatus[status].map((id: number) => ({
+const taskByIdSelector = (id: string) => (store: IRootState): ITask => {
+  const status =
+    Object.values(TaskStatus).find((status) =>
+      store.ui.taskStatus[status].includes(id)
+    ) || TaskStatus.ToDo;
+  const taskData = store.data.tasks.byIds[id];
+  return {
     id,
-    status: status,
-    ...store.data.tasks.byIds[id],
-  }));
+    status,
+    ...taskData,
+  };
+};
 
-export { taskSelector };
+export { taskByIdSelector };

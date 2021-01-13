@@ -1,19 +1,20 @@
 import { produce } from "immer";
+import { nanoid } from "nanoid";
 
 const initialState: TasksState = {
   tasks: {
     byIds: {
-      1: {
+      "1": {
         title: "item 1",
       },
-      2: {
+      "2": {
         title: "item 2",
       },
-      3: {
+      "3": {
         title: "item 3",
       },
     },
-    allIds: [1, 2, 3],
+    allIds: ["1", "2", "3"],
   },
 };
 
@@ -25,7 +26,7 @@ const tasksReducer = (
     switch (action.type) {
       case "CREATE": {
         const { title, id } = action;
-        draft.tasks.byIds[id] = { id, title };
+        draft.tasks.byIds[id] = { id, title, updateId: nanoid(6) };
         draft.tasks.allIds.push(id);
         break;
       }

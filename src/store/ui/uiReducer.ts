@@ -1,5 +1,6 @@
 import { TaskStatus } from "../../common";
 import { produce } from "immer";
+import { nanoid } from "nanoid";
 
 const initialState: UIState = {
   taskStatus: {
@@ -7,6 +8,7 @@ const initialState: UIState = {
     [TaskStatus.Doing]: [2],
     [TaskStatus.Done]: [3],
   },
+  updateId: nanoid(6),
 };
 
 const uiReducer = (
@@ -14,6 +16,7 @@ const uiReducer = (
   action: TaskAction
 ): UIState =>
   produce(state, (draft: UIState) => {
+    console.log(action);
     switch (action.type) {
       case "CREATE": {
         const { id } = action;
@@ -21,14 +24,25 @@ const uiReducer = (
         break;
       }
       case "SET_STATUS": {
-        const { status: taskStatus, id: idToUpdate } = action;
+        const {
+          status: taskStatus,
+          id: idToUpdate,
+          order = undefined,
+        } = action;
         Object.values(TaskStatus).forEach((status) => {
-          if (taskStatus === status) draft.taskStatus[status].push(idToUpdate);
-          else
-            draft.taskStatus[status] = draft.taskStatus[status].filter(
-              (id: number) => id !== idToUpdate
-            );
+          draft.taskStatus[status] = draft.taskStatus[status].filter(
+            (id: string) => id !== idToUpdate
+          );
+          if (taskStatus === status) {
+            console.log("###order:", order);
+            if (order || order === 0) {
+              console.log("inserting");
+              draft.taskStatus[status].splice(order, 0, idToUpdate);
+              console.log(draft.taskStatus[status]);
+            } else draft.taskStatus[status].push(idToUpdate);
+          }
         });
+        draft.updateId = nanoid(6);
         break;
       }
       case "DELETE": {
@@ -36,7 +50,7 @@ const uiReducer = (
         Object.values(TaskStatus).forEach(
           (status) =>
             (draft.taskStatus[status] = draft.taskStatus[status].filter(
-              (id: number) => id !== idToDelete
+              (id: string) => id !== idToDelete
             ))
         );
         break;
