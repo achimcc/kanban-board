@@ -22,6 +22,7 @@ describe("tasksReducer", () => {
         type: "SET_STATUS",
         id: "1",
         status: TaskStatus.Doing,
+        order: 0,
       })
     ).toMatchObject({
       taskStatus: {
